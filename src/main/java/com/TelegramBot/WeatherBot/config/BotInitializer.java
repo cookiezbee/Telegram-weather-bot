@@ -11,7 +11,7 @@ import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
 @Component
 public class BotInitializer {
-    @Autowired
+    @Autowired //Аннотация позволяет автоматически установить значение поля
     TelegramBot bot;
     @EventListener({ContextRefreshedEvent.class})
     public void init() throws TelegramApiException{

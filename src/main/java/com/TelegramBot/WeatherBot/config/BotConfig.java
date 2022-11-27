@@ -4,10 +4,9 @@ import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.annotation.Bean;
 
 @Configuration
-@Data
+@Data //Автоматически создает конструкторы класса
 @PropertySource("application.properties")
 public class BotConfig {
 
@@ -16,17 +15,4 @@ public class BotConfig {
 
     @Value("${bot.token}")
     String token;
-
-    static String myToken;
-    static String myUsername;
-
-    @Bean
-    public void setBotToken() {
-        myToken = token;
-    }
-
-    @Bean
-    public void setUsername() {
-        myUsername = botName;
-    }
 }
